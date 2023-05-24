@@ -111,7 +111,7 @@ const Button = styled.button`
   position: static;
   :hover {
     background-color: whitesmoke;
-    border-radius: 15px;
+    border-radius: 16px;
   }
 `;
 const Links2 = styled.div`
