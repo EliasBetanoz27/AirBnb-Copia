@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Fuse from "fuse.js";
 
@@ -42,7 +42,6 @@ const Img = styled.img`
 `;
 
 const Informacion = styled.div`
-  height: 100%;
   padding: 0px 10px;
   display: row;
 `;
@@ -173,7 +172,7 @@ const Cartas = () => {
       nombre: " Puerto Escondido,Mexico",
       calificacion: 4.2,
       vista: "Con vista al mar",
-      fecha: "5-10 de sep.",
+      fecha: "5-10 de nov.",
       precio: "$3,896 MXN ",
       img: "https://a0.muscache.com/im/pictures/miso/Hosting-15971473/original/4a97994a-9e1b-484b-9179-514db0c972b0.jpeg?im_w=720",
     },
@@ -181,8 +180,8 @@ const Cartas = () => {
       nombre: " Puerto Escondido,Mexico",
       calificacion: 4.4,
       vista: "Con vista al mar",
-      fecha: "5-10 de sep.",
-      precio: "$3,896 MXN ",
+      fecha: "5-10 de oct.",
+      precio: "$13,896 MXN ",
       img: "https://a0.muscache.com/im/pictures/miso/Hosting-15971473/original/4a97994a-9e1b-484b-9179-514db0c972b0.jpeg?im_w=720",
     },
     {
@@ -190,18 +189,44 @@ const Cartas = () => {
       calificacion: 4.4,
       vista: "Con vista al mar",
       fecha: "5-10 de sep.",
-      precio: "$3,896 MXN ",
+      precio: "$4,896 MXN ",
       img: "https://a0.muscache.com/im/pictures/miso/Hosting-15971473/original/4a97994a-9e1b-484b-9179-514db0c972b0.jpeg?im_w=720",
     },
-    {
-      nombre: " Puerto Vallarta,Mexico",
-      calificacion: 4.6,
-      vista: "Con vista al mar",
-      fecha: "5-10 de sep.",
-      precio: "$3,896 MXN ",
-      img: "https://a0.muscache.com/im/pictures/miso/Hosting-15971473/original/4a97994a-9e1b-484b-9179-514db0c972b0.jpeg?im_w=720",
-    },
+    // {
+    //   nombre: " Ruiz Nayarit,Mexico",
+    //   calificacion: 4.4,
+    //   vista: "Con vista al mar",
+    //   fecha: "5-10 de sep.",
+    //   precio: "$4,896 MXN ",
+    //   img: "https://a0.muscache.com/im/pictures/miso/Hosting-15971473/original/4a97994a-9e1b-484b-9179-514db0c972b0.jpeg?im_w=720",
+    // },
   ];
+  //object desctructuring,
+  const Clientes = {
+    nombre: "elias",
+    calificacion: "1.2",
+    vista: "mar",
+    fecha: "12/12/09",
+  };
+  const Pruebas = ( { nombre:sas, calificacion, vista, fecha } ) => {
+    console.log(sas);
+    console.log(calificacion);
+    console.log(vista);
+    console.log(fecha);
+  };
+  Pruebas(Clientes);
+
+
+   //Array desctructuring,
+   var a;
+   var b;
+   var c ;
+   var d;
+   const Array=["elias","juan", "miguel","joan"];
+   [...a]=["elias","juan", "miguel","joan"];
+   console.log(a)
+
+
   const options = {
     //      isCaseSensitive: false,
     //    includeScore: false,
@@ -249,7 +274,6 @@ const Cartas = () => {
             onChange={(e) => Cambiar(e.target.value)}
           ></Search>
         </Box>
-
         <Links2>
           <Button>
             <A href="#">Pon tu casa en Airbnb</A>
